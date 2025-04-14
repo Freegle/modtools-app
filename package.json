@@ -14,12 +14,14 @@
   "author": "Chris Cant",
   "cordova": {
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "@havesource/cordova-plugin-push": {
         "ANDROIDX_CORE_VERSION": "1.6.+",
-        "FCM_VERSION": "23.+"
+        "FCM_VERSION": "23.+",
+        "IOS_FIREBASE_MESSAGING_VERSION": "10.24.0"
       },
       "cordova-plugin-device": {},
       "cordova-plugin-inappbrowser": {}
@@ -28,6 +30,8 @@
   "devDependencies": {
     "@havesource/cordova-plugin-push": "^5.0.5",
     "cordova-android": "^14.0.0",
-    "cordova-plugin-device": "^3.0.0"
+    "cordova-ios": "^7.1.1",
+    "cordova-plugin-device": "^3.0.0",
+    "cordova-plugin-inappbrowser": "^6.0.0"
   }
 }
