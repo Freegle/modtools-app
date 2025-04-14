@@ -90,7 +90,9 @@ function mainOnAppStart() {
       console.log('route', route);
       if (route && route.length > 0) {
         console.log('Opening', route)
-        window.open('https://modtools.org'+route,"_system")
+        var ref = cordova.InAppBrowser.open('https://modtools.org' + route, '_blank', 'location=yes');
+        console.log('Opened', ref)
+        //window.open('https://modtools.org'+route,"_system")
       }
 
       /*var count = 0;

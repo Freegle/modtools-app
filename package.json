@@ -21,7 +21,8 @@
         "ANDROIDX_CORE_VERSION": "1.6.+",
         "FCM_VERSION": "23.+"
       },
-      "cordova-plugin-device": {}
+      "cordova-plugin-device": {},
+      "cordova-plugin-inappbrowser": {}
     }
   },
   "devDependencies": {
