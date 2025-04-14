@@ -48,5 +48,7 @@
     <preference name="BackupWebStorage" value="none" />
   </platform>
 
-  <hook src="scripts/before_build.sh" type="before_build" />
+  <platform name="android">
+    <hook src="scripts/before_build.sh" type="before_build" />
+  </platform>
 </widget>
