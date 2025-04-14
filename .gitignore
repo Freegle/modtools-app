@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+/plugins/
+/platforms/
+build.json
+*.sh
+.vs
+google-services.json

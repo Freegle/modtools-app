@@ -1,0 +1,32 @@
+{
+  "name": "org.ilovefreegle.modtools",
+  "displayName": "ModTools",
+  "version": "0.4.0",
+  "comment0": "Also change version in config.xml and www/js/index.js",
+  "description": "Tool to help Freegle community volunteers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Chris Cant",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "@havesource/cordova-plugin-push": {
+        "ANDROIDX_CORE_VERSION": "1.6.+",
+        "FCM_VERSION": "23.+"
+      },
+      "cordova-plugin-device": {}
+    }
+  },
+  "devDependencies": {
+    "@havesource/cordova-plugin-push": "^5.0.5",
+    "cordova-android": "^14.0.0",
+    "cordova-plugin-device": "^3.0.0"
+  }
+}
