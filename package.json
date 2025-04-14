@@ -1,9 +1,9 @@
 {
   "name": "org.ilovefreegle.modtools",
   "displayName": "ModTools",
+  "description": "Tool to help Freegle community volunteers",
   "version": "0.4.0",
   "comment0": "Also change version in config.xml and www/js/index.js",
-  "description": "Tool to help Freegle community volunteers",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,11 @@
     "ecosystem:cordova"
   ],
   "author": "Chris Cant",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Freegle/modtools-app"
+  },
+  "comment1": "Requires cordova installed as npm -g",
   "cordova": {
     "platforms": [
       "android",
