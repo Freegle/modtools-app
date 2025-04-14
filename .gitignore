@@ -6,3 +6,5 @@ build.json
 /*.sh
 .vs
 google-services.json
+GoogleService-info.plist
+buildlog.txt
