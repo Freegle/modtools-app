@@ -11,6 +11,7 @@ const EMAIL_REGEX =
 
 function connect () {
   try {
+    window.localStorage.setItem('connected', 'false')
     document.getElementById('problem').innerHTML = ''
     const email = document.getElementById('email').value.trim()
     console.log('connect', email)
@@ -41,7 +42,10 @@ function connect () {
     }
     function connected (json) {
       console.log('Completed', json)
-      document.getElementById('problem').innerHTML = 'Connected'
+      document.getElementById('problem').innerHTML = json.status
+      if (json.status === 'Success') {
+        window.localStorage.setItem('connected', 'true')
+      }
     }
     fetch(url, {
       method: 'POST',
@@ -105,6 +109,10 @@ function mainOnAppStart () {
   console.log('connectedemail', connectedemail)
   if (connectedemail) {
     document.getElementById('email').value = connectedemail
+  }
+  const connected = window.localStorage.getItem('connected')
+  if (connected && connected === 'true') {
+    document.getElementById('problem').innerHTML = 'Already connected'
   }
 
   console.log('push init start')
