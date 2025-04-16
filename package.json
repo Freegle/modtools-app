@@ -6,7 +6,8 @@
   "comment0": "Also change version in config.xml and www/js/index.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "standard": "standard www/js/*.js"
   },
   "keywords": [
     "ecosystem:cordova"
