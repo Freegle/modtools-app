@@ -1,6 +1,11 @@
 /* global cordova, PushNotification */
 const version = 'v0.4.0' // Also change in /package.json and /config.xml
 
+const apiurl = 'https://fdapidbg.ilovefreegle.org/api/session'
+const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
+// const mturl = 'https://modtools.org' // No / at end
+const mtwindowname = '_blank' // _self
+
 window.isandroid = false
 window.isiOS = false
 window.mobilePushId = false
@@ -27,8 +32,7 @@ function connect () {
     console.log('connectedemail saved', email)
     document.getElementById('problem').innerHTML = 'Connecting'
 
-    const url = 'https://fdapidbg.ilovefreegle.org/api/session'
-    console.log('url', url)
+    console.log('apiurl', apiurl)
 
     const params = {
       email,
@@ -47,7 +51,7 @@ function connect () {
         window.localStorage.setItem('connected', 'true')
       }
     }
-    fetch(url, {
+    fetch(apiurl, {
       method: 'POST',
       body: JSON.stringify(params),
       headers: {
@@ -95,7 +99,7 @@ function mainOnAppStart () {
 
   function startMT () {
     console.log('startMT')
-    const ref = cordova.InAppBrowser.open('https://modtools.org/', '_blank', 'location=yes')
+    const ref = cordova.InAppBrowser.open(mturl, mtwindowname, 'location=yes')
     console.log('Opened', ref)
   }
 
@@ -177,7 +181,7 @@ function mainOnAppStart () {
       console.log('route', route)
       if (route && (route.length) > 0 && !foreground) {
         console.log('Opening', route)
-        const ref = cordova.InAppBrowser.open('https://modtools.org' + route, '_blank', 'location=yes')
+        const ref = cordova.InAppBrowser.open(mturl + route, mtwindowname, 'location=yes')
         console.log('Opened', ref)
         // window.open('https://modtools.org'+route,"_system")
       }
