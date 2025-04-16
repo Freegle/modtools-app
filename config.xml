@@ -7,6 +7,7 @@
   <content src="index.html" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
+  <access origin="*" />
 
   <platform name="ios">
     <splash src="package-assets/Default@2x~universal~anyany.png" />

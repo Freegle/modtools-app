@@ -218,6 +218,10 @@ function mainOnAppStart () {
       console.log('mobilePush error ' + e.message)
     })
   }
+
+  if (connected && connected === 'true') {
+    cordova.InAppBrowser.open(mturl, mtwindowname, 'location=yes')
+  }
 }
 
 document.addEventListener('deviceready', mainOnAppStart, false)
