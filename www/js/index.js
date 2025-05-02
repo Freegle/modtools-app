@@ -2,8 +2,8 @@
 const version = 'v0.4.0' // Also change in /package.json and /config.xml
 
 const apiurl = 'https://fdapidbg.ilovefreegle.org/api/session'
-const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
-// const mturl = 'https://modtools.org' // No / at end
+// const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
+const mturl = 'https://modtools.org' // No / at end
 const mtwindowname = '_blank' // _self
 
 window.isandroid = false
