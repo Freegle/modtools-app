@@ -4,7 +4,8 @@ const version = 'v0.4.1' // Also change in /package.json and /config.xml
 const apiurl = 'https://fdapidbg.ilovefreegle.org/api/session'
 const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
 //const mturl = 'https://modtools.org' // No / at end
-const mtwindowname = '_blank' // _self
+//const mtwindowname = '_blank' // _self
+const mtwindowname = 'modtools' // _self
 
 window.isandroid = false
 window.isiOS = false
@@ -177,9 +178,13 @@ function mainOnAppStart () {
       // const coldstart = data.additionalData.coldstart
       const foreground = data.additionalData.foreground
       // const contentAvailable = data.additionalData['content-available']
-      const route = data.additionalData.route
+      let route = data.additionalData.route
       console.log('route', route)
       if (route && (route.length) > 0 && !foreground) {
+        const mtatstart = '/modtools'
+        if (route.startsWith(mtatstart)) {
+          route = route.substring(mtatstart.length)
+        }
         console.log('Opening', route)
         const ref = cordova.InAppBrowser.open(mturl + route, mtwindowname, 'location=yes')
         console.log('Opened', ref)
