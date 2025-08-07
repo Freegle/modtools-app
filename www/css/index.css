@@ -61,6 +61,10 @@ h1 {
   margin: 10px auto;
 }
 
+#start:disabled {
+  background-color: gray;
+  color: white;
+}
 
 .connection {
   position: absolute;

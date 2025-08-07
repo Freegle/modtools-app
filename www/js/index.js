@@ -1,10 +1,10 @@
 /* global cordova, PushNotification */
-const version = 'v0.4.3' // Also change in /package.json and /config.xml
+const version = 'v0.4.4' // Also change in /package.json and /config.xml
 
 const apiurl = 'https://fdapidbg.ilovefreegle.org/api/session'
-//const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
+// const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
 const mturl = 'https://modtools.org' // No / at end
-//const mtwindowname = '_blank' // _self
+// const mtwindowname = '_blank' // _self
 const mtwindowname = 'modtools' // _self
 
 window.isandroid = false
@@ -21,6 +21,24 @@ function connect () {
     document.getElementById('problem').innerHTML = ''
     const email = document.getElementById('email').value.trim()
     console.log('connect', email)
+    window.localStorage.setItem('connectedemail', email)
+    document.getElementById('start').disabled = true
+    if (email.length === 0) {
+      document.getElementById('problem').innerHTML = 'Email address removed'
+      if ((typeof PushNotification === 'undefined') || (!PushNotification)) {
+        console.log('no push notification service')
+      } else if (window.mobilePushId && window.mobilePush) {
+        console.log('Stopping notifs')
+        window.mobilePush.unregister((e) => {
+          document.getElementById('problem').innerHTML = 'Notifications stopped'
+        },
+        (e) => {
+          document.getElementById('problem').innerHTML = 'Error stopping notifications'
+        }
+        )
+      }
+      return
+    }
     if (!email.match(EMAIL_REGEX)) {
       document.getElementById('problem').innerHTML = 'Not an email address'
       return
@@ -29,7 +47,6 @@ function connect () {
       document.getElementById('problem').innerHTML = 'Push notifications not accepted'
       return
     }
-    window.localStorage.setItem('connectedemail', email)
     console.log('connectedemail saved', email)
     document.getElementById('problem').innerHTML = 'Connecting'
 
@@ -50,6 +67,7 @@ function connect () {
       document.getElementById('problem').innerHTML = json.status
       if (json.status === 'Success') {
         window.localStorage.setItem('connected', 'true')
+        document.getElementById('start').disabled = false
       }
     }
     fetch(apiurl, {
@@ -118,6 +136,7 @@ function mainOnAppStart () {
   const connected = window.localStorage.getItem('connected')
   if (connected && connected === 'true') {
     document.getElementById('problem').innerHTML = 'Already connected'
+    document.getElementById('start').disabled = false
   }
 
   console.log('push init start')
@@ -226,6 +245,7 @@ function mainOnAppStart () {
 
   if (connected && connected === 'true') {
     cordova.InAppBrowser.open(mturl, mtwindowname, 'location=yes')
+    document.getElementById('start').disabled = false
   }
 }
 
