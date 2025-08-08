@@ -61,6 +61,7 @@ h1 {
   margin: 10px auto;
 }
 
+#connect:disabled,
 #start:disabled {
   background-color: gray;
   color: white;
