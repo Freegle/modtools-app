@@ -44,6 +44,7 @@
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="PreferredContentMode" value="mobile" />
+    <preference name="InAppBrowserStatusBarStyle" value="darkcontent" />
   </platform>
   <platform name="ios">
     <preference name="WKWebViewOnly" value="true" />
