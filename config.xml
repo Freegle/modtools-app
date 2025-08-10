@@ -43,6 +43,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="PreferredContentMode" value="mobile" />
   </platform>
   <platform name="ios">
     <preference name="WKWebViewOnly" value="true" />
