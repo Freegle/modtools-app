@@ -2,7 +2,7 @@
   "name": "org.ilovefreegle.modtools",
   "displayName": "ModTools",
   "description": "Tool to help Freegle community volunteers",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "comment0": "Also change version in config.xml and www/js/index.js",
   "comment1": "Requires cordova installed as npm -g",
   "comment2": "JAVA_HOME must be C:\\Tools\\Java\\jdk-17.0.4",
