@@ -1,5 +1,5 @@
 /* global cordova, PushNotification */
-const version = 'v0.4.6' // Also change in /package.json and /config.xml
+const version = 'v0.4.7' // Also change in /package.json and /config.xml
 
 const apiurl = 'https://fdapidbg.ilovefreegle.org/api/session'
 // const mturl = 'https://modtools--golden-caramel-d2c3a7.netlify.app' // No / at end
@@ -180,7 +180,7 @@ function tryInitNotifications () {
         route = route.substring(mtatstart.length)
       }
       console.log('Opening', route)
-      const ref = cordova.InAppBrowser.open(mturl + route + '?inMTapp=true', mtwindowname, 'location=yes')
+      const ref = cordova.InAppBrowser.open(mturl + route + '?inMTapp=' + version, mtwindowname, 'location=yes')
       console.log('Opened', ref)
       // window.open('https://modtools.org'+route,"_system")
     }
@@ -237,7 +237,7 @@ function mainOnAppStart () {
   function startMT () {
     console.log('startMT')
     window.localStorage.setItem('alreadyStarted', 'true')
-    const ref = cordova.InAppBrowser.open(mturl + '/?inMTapp=true', mtwindowname, 'location=yes')
+    const ref = cordova.InAppBrowser.open(mturl + '/?inMTapp=' + version, mtwindowname, 'location=yes')
     console.log('Opened', ref)
   }
 
@@ -267,7 +267,7 @@ function mainOnAppStart () {
   // Start ModTools window if we are already connected or if we press Start once before
   const connected = window.localStorage.getItem('connected')
   if ((connected && connected === 'true') || (alreadyStarted && alreadyStarted === 'true')) {
-    cordova.InAppBrowser.open(mturl + '/?inMTapp=true', mtwindowname, 'location=yes')
+    cordova.InAppBrowser.open(mturl + '/?inMTapp=' + version, mtwindowname, 'location=yes')
     // document.getElementById('start').disabled = false
   }
 }

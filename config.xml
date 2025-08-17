@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.ilovefreegle.modtools" version="0.4.6" android-versionCode="506" ios-CFBundleVersion="506" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.ilovefreegle.modtools" version="0.4.7" android-versionCode="507" ios-CFBundleVersion="507" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <!-- Also change version in package.json and www/js/index.js -->
   <name>ModTools</name>
   <description>Tool to help moderators of Freegle groups</description>
